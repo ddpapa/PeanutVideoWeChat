@@ -1,0 +1,6 @@
+<!--minavbar/minavbar.wxml-->
+<!-- 自定义导航栏外壳 -->
+<view class="navbar-css" style="background-color:{{backgroundColor}}; background-image:{{backgroundImage}}; {{navbarTopHeight}} {{navbarHeight}}">
+  <!-- 请在这里插入导航栏内容 -->
+  <slot></slot>
+</view>

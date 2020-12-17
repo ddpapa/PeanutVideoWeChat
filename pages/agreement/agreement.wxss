@@ -1,0 +1,6 @@
+/* pages/agreement.wxss */
+.topic{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

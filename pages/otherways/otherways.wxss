@@ -1,0 +1,115 @@
+/**otherways.wxss**/
+.container{
+  flex-direction: column;
+  align-items: center;
+}
+.topItem{
+  width: 600rpx;
+  display: flex;
+  align-items: left;
+  flex-direction: column;
+  margin-top: 40rpx;
+}
+.headText{
+  font-size: 50rpx;
+}
+.tipText{
+  font-size: 25rpx;
+  color: #c6c6c6;
+}
+.phone_left{
+  display: flex;
+  flex-direction: row;
+  margin-top: 20rpx;
+}
+.phone_left label{
+  display: block;
+  width: 80rpx;
+  font-size: 35rpx;
+  margin-right: 10rpx;
+}
+.operation{
+  width: 600rpx;
+  display: flex;
+  margin-top: 10rpx;
+  align-items: left;
+  flex-direction: column;
+}
+.operation form{
+  width: 600rpx;
+}
+/* 文本输入框 */
+.operation form input{
+  font-family: "黑体";
+  font-weight: 520;
+  font-size: 35rpx;
+  height: 50rpx;
+  caret-color: #ff5000;
+}
+.line{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.8rpx solid #c6c6c6;
+  padding-bottom: 30rpx;
+  margin-bottom: 30rpx;
+}
+.phoneInput{
+  padding-left: 20rpx;
+}
+.phone_delete{
+  margin-top: 20rpx;
+}
+.codeInput{
+  width: 240rpx;
+}
+.code_right{
+  display: flex;
+  flex-direction: row;
+}
+.code_delete{
+  margin-top: 5rpx;
+}
+.code_btn{
+  color: #ff5000;
+  font-size: 30rpx;
+  font-weight: 510;
+  margin-left: 20rpx;
+}
+/* 可重新发送倒计时 */
+.btn_sendTime{
+  margin-left: 10rpx;
+}
+/* 密码登录按钮 */
+.pwd_btn{
+  font-size: 30rpx;
+  color: #043e7e;
+}
+/* 登录按钮 */
+.login_btn{
+  display: flex;
+  justify-content: center;
+  margin-top: 30rpx;
+  width: 500rpx !important;
+  text-align: center;
+  border-radius: 38rpx !important;
+  margin:40rpx 0 20rpx 0;
+  font-size: 30rpx;
+  color: white;
+  background-color: #ff5000;
+}
+.login_btn[disabled]:not([type]) {
+  color: #fcddbe !important;
+  background-color: #fcbc7c !important;
+}
+.agreement{
+  margin-top: 20rpx;
+  font-size: 28rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bottomLink{
+  color: #043e7e;
+}

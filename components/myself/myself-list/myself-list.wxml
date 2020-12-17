@@ -1,0 +1,14 @@
+<!-- milist/milist.wxml -->
+<view class="list-table" style="font-size:{{fontSize}}rpx;">
+    <slot name="before"></slot>
+    <!-- 使用需要设置的属性：leftHeight 和 width -->
+    <view class="list-item" data-id="item{{index}}" wx:key="index" wx:for="{{dataMsg}}" bind:tap="onTap">
+        <iconfont name="{{item.start}}" size="40"/>
+        <view class="item-start" style="width:{{rightWidth}}%; height:{{rightHeight}}rpx; border-bottom:{{item.border}};">
+            <text>{{item.name}}</text>
+            <iconfont name="{{item.end}}" size="25" wx:if="{{item.end}}"/>
+            <slot name="inner_{{index}}" wx:else></slot>
+        </view>
+    </view>
+    <slot name="after"></slot>
+</view>

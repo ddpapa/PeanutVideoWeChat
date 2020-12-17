@@ -1,0 +1,107 @@
+<!-- pages/index/index.wxml -->
+<wxs module="leftmask" src="./leftmask.wxs"></wxs>
+<!-- 顶部页面 -->
+<view class="page-top" data-width="{{windowWidth}}" binddragging="gainLeftWidth">
+  <!-- 顶部导航栏 -->
+  <custom-navbar backgroundColor="transparent">
+    <view data-width="{{systemData.windowWidth}}" id="leftBar" class="tabbar-left in-item" bindtap="{{leftmask.tap}}">
+      <iconfont name="{{tabBarStyle.leftBarName}}" size="35"></iconfont>
+    </view>
+    <view class="tabbar-center">
+      <view id="tab-{{idx}}" class="tab-item" bindtap="changeSelected" wx:key="index" wx:for="{{list}}" wx:for-item="tab" wx:for-index="idx">
+        <view class="text-item" style="color:{{idx == currentTab ? tabBarStyle.tabItemBgColorSelected[idx]:tabBarStyle.tabItemBgColorDefault[idx]}}; font-weight:{{idx == targetView ? 550:500}};">
+          {{tab.text}}
+        </view>
+        <view class="slide-item" style="background-color:{{idx == currentTab ? tabBarStyle.slideBgColorSelected[idx]:tabBarStyle.slideBgColorDefault}};"></view>
+      </view>
+    </view>
+  </custom-navbar>
+  <swiper class="contentView" current="{{currentTab}}" bindchange="changeSelected">
+    <swiper-item id="item0" data-width="{{systemData.windowWidth}}" bindtouchstart="{{leftmask.touchstart}}" bindtouchend="{{leftmask.swiperTouchend}}" bindtouchmove="{{leftmask.touchmove}}">
+      <view class="content-location" style="height:{{systemData.windowHeight-systemData.navbarHeight-systemData.statusBarHeight}}px; margin-top:{{systemData.statusBarHeight}}px; padding-top:{{systemData.navbarHeight}}px">
+        <scroll-view enhanced="{{false}}" paging-enabled="{{false}}" class="cover-list" scroll-y="{{true}}" scroll-x="{{false}}">
+          <view class="hot-lab">
+            <view class="label" wx:for="{{hostlabel}}">{{item.name}}</view>
+          </view>
+          <!-- 使用miblock组件 -->
+          <myself-block my-class="myScrollStyle" list="{{videolist}}" />
+        </scroll-view>
+      </view>
+    </swiper-item>
+    <swiper-item id="item1">
+      <view class="content-location" style="height:{{systemData.windowHeight-systemData.navbarHeight-systemData.statusBarHeight}}px; margin-top:{{systemData.statusBarHeight}}px; padding-top:{{systemData.navbarHeight}}px">
+        <scroll-view enhanced="{{false}}" paging-enabled="{{false}}" class="cover-list" scroll-y="{{true}}" scroll-x="{{false}}">
+          <!-- 使用miblock组件 -->
+          <myself-block my-class="myScrollStyle" list="{{videolist}}" />
+        </scroll-view>
+      </view>
+    </swiper-item>
+    <swiper-item id="item2" class="content-location">
+      <view style="height:{{systemData.windowHeight}}px;">
+        <scroll-view enhanced="{{false}}" paging-enabled="{{false}}" class="cover-list" scroll-y="{{true}}" scroll-x="{{false}}">
+          <!-- 使用miplayer组件 -->
+          <custom-video videoList="{{dataList}}"></custom-video>
+        </scroll-view>
+      </view>
+    </swiper-item>
+  </swiper>
+  <!-- 这是一个遮罩层，不允许其他触摸动作 -->
+  <view data-width="{{systemData.windowWidth}}" bindtouchstart="{{leftmask.touchstart}}" bindtouchend="{{leftmask.touchend}}" bindtouchmove="{{leftmask.touchmove}}" bindtap="{{leftmask.tapMask}}" class="mask-layer"></view>
+</view>
+<!-- 底部页面 -->
+<view class="page-bottom">
+  <view class="outer-container" style="height:{{systemData.windowHeight-systemData.statusBarHeight*2}}px;">
+    <!-- 顶部功能区 -->
+    <view class="innter-top">
+      <!-- 定位 -->
+      <view class="personal location">
+        <view>
+          <iconfont name="qiandao" size="30" />
+          <text>签到，有积分</text>
+        </view>
+        <view>
+          <iconfont name="didian" size="30" />
+          <text>长春</text>
+        </view>
+      </view>
+      <!-- 个人头像 -->
+      <view class="personal message" bind:tap="{{leftmask.tapOthers}}">
+        <image mode="heightFix" src="{{personal.avatar}}" bindtap="gotoUserIndex"></image>
+        <view>
+          <view class="nick">
+            <view bindtap="gotoUserIndex">{{personal.nickname}}</view>
+            <iconfont name="erweima" size="30"></iconfont>
+          </view>
+          <view class="desc" bindtap="gotoUserIndex">{{personal.description}}</view>
+        </view>
+      </view>
+      <!-- 消息动态 -->
+      <view class="personal news">
+        <view>
+          <view>
+            <iconfont name="dongtai" size="60" />
+            <text>动态</text>
+          </view>
+        </view>
+        <view>
+          <view>
+            <iconfont name="xiaoxi" size="60" />
+            <text>消息</text>
+          </view>
+        </view>
+        <view>
+          <view>
+            <iconfont name="sixing" size="60" />
+            <text>私信</text>
+          </view>
+        </view>
+      </view>
+      <!-- 功能列表 -->
+      <myself-list dataMsg="{{leftList}}" rightWidth="87" rightHeight="100" fontSize="30" bindtapList="tapList"></myself-list>
+    </view>
+    <!-- 底部功能区 -->
+    <view class="inner-bottom">
+      <myself-btn my-class="myCameraBtn" bind:jump="gotoCamera"></myself-btn>
+    </view>
+  </view>
+</view>

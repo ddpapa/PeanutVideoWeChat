@@ -1,0 +1,9 @@
+{
+    "navigationBarTitleText": "设置",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationStyle": "default",
+    "navigationBarTextStyle": "black",
+    "usingComponents": {
+        "myself-list": "../../components/myself/myself-list/myself-list"
+    }
+}

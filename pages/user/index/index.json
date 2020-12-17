@@ -1,0 +1,9 @@
+{
+    "navigationStyle": "custom",
+    "enablePullDownRefresh": false,
+    "usingComponents": {
+        "custom-navbar": "../../../components/custom/custom-navbar/custom-navbar",
+        "myself-block":"../../../components/myself/myself-block/myself-block",
+        "myself-btn":"../../../components/myself/myself-btn/myself-btn"
+    }
+}

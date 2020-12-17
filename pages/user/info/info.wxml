@@ -1,0 +1,56 @@
+<!-- pages/user/info/info.wxml -->
+<view class="page">
+    <view data-name="avatar" class="avatar" bind:tap="gotoEditor">
+        <text>头像</text>
+        <view>
+            <image class="avatar-image" mode="widthFix" src="{{userInfo.avatar}}" />
+            <icon class="iconfont icon_jinru" />
+        </view>
+    </view>
+    <view data-name="nickname" bind:tap="gotoEditor">
+        <text>昵称</text>
+        <view>
+            <view>{{userInfo.nickname}}</view>
+            <icon class="iconfont icon_jinru" />
+        </view>
+    </view>
+    <view data-name="userid" bind:tap="gotoEditor">
+        <text>用户 ID</text>
+        <view>
+            <view>{{userInfo.userid}}</view>
+            <icon class="iconfont icon_jinru" />
+        </view>
+    </view>
+    <view>
+        <text>性别</text>
+        <view>
+            <view>男</view>
+            <icon class="iconfont icon_jinru" />
+        </view>
+    </view>
+    <view>
+        <text>生日</text>
+        <view>
+            <picker mode="date" value="{{userInfo.birthday}}" start="1900-01-01" end="2020-01-01" bindchange="bindDateChange">
+                <view class="picker">{{userInfo.birthday}}</view>
+            </picker>
+            <icon class="iconfont icon_jinru" />
+        </view>
+    </view>
+    <view>
+        <text>所在地</text>
+        <view>
+            <picker mode="region" bindchange="bindRegionChange" value="{{userInfo.region}}" custom-item="{{customItem}}">
+                <view class="picker">{{userInfo.region[0]}}-{{userInfo.region[1]}}-{{userInfo.region[2]}}</view>
+            </picker>
+            <icon class="iconfont icon_jinru" />
+        </view>
+    </view>
+    <view  data-name="description" bind:tap="gotoEditor">
+        <text>个人介绍</text>
+        <view>
+        <view>{{userInfo.description}}</view>
+            <icon class="iconfont icon_jinru" />
+        </view>
+    </view>
+</view>

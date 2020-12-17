@@ -1,0 +1,104 @@
+/* pages/camera/camera.wxss */
+
+page {
+    height: 100vh;
+    background-color: black;
+    display: flex;
+}
+
+camera {
+    height: 100vh;
+    width: 100vw;
+}
+
+.mask-layer {
+    width: 100vw;
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0));
+}
+
+.topBar {
+    width: 80vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-left: 3vw;
+}
+
+.topBar>view {
+    margin-right: 23vw;
+    display: flex;
+    align-items: center;
+}
+
+.size-view {
+    width: 350rpx;
+    height: 50rpx;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 0 20rpx;
+    position: fixed;
+    z-index: 9;
+    left: 180rpx;
+    border-radius: 15rpx;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 540;
+    font-size: 25rpx;
+}
+
+.screen {
+    font-size: 20rpx;
+    padding: 3rpx 0;
+    border: 4rpx solid white;
+    border-radius: 10rpx;
+    display: flex;
+    width: 40rpx;
+    height: 45rpx;
+    justify-content: center;
+}
+
+.screen text {
+    font-weight: 540;
+    color: white;
+    display: block;
+}
+
+.top-rightBar {
+    position: fixed;
+    z-index: 9;
+    display: flex;
+    right: 3vw;
+    padding-top: 30rpx;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-size: 20rpx;
+}
+
+.top-rightBar-view {
+    margin-bottom: 40rpx;
+}
+
+.has-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.has-icon.top-rightBar-view>view {
+    height: 60rpx;
+    width: 60rpx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.has-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

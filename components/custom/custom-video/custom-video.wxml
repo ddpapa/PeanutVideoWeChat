@@ -1,0 +1,47 @@
+<!-- miplayer/miplayer.wxml -->
+<swiper class="video-component" vertical="{{true}}" bindchange="checkVideos">
+    <swiper-item class="video-container" wx:for="{{videoList}}" wx:key="index">
+        <video id="video-{{index}}" class="video-item" src="{{item.url}}" bindtap="pauseVideo" autoplay="{{false}}" auto-pause-if-navigate="{{true}}" object-fit="contain" show-fullscreen-btn="{{showProgress}}" show-play-btn="{{false}}" play-btn-position="{{center}}" show-center-play-btn="{{false}}" show-progress="{{false}}">
+            <!-- 交互面板 -->
+            <view class="videoControl">
+                <view class="videoInfo">
+                    <view class="video-bgm">
+                        <iconfont name="yinle" size="30" />
+                        <view class="video-bgm-view">
+                            <view class="video-bgm-content" animation="{{moveAnimationLeft}}">
+                                {{item.bgm}}
+                            </view>
+                            <view class="video-bgm-content" animation="{{moveAnimationRight}}">
+                                {{item.bgm}}
+                            </view>
+                        </view>
+                    </view>
+                    <view class="video-description">{{item.description}}</view>
+                    <view>@{{item.author}}</view>
+                </view>
+                <view class="userCtrl">
+                    <text style="margin-bottom:0rpx;">分享</text>
+                    <view>
+                        <icon class="iconfont icon_fenxiang" />
+                    </view>
+                    <text>{{item.comments}}</text>
+                    <view>
+                        <icon class="iconfont icon_pinglun" />
+                    </view>
+                    <text>{{item.likes}}</text>
+                    <view>
+                        <icon class="iconfont icon_soucang" />
+                    </view>
+                    <view class="user-avatar">
+                        <image mode="heightFix" class="avatar-img" src="{{item.avatar}}"></image>
+                        <view class="user-attention">
+                            <iconfont name="jiahao-dange" size="30" />
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <!-- 播放暂停 -->
+            <image class="video-pause-btn" mode="heightFix" src="../pages/resource/images/bofang.png" wx:if="{{pauseHiden}}" />
+        </video>
+    </swiper-item>
+</swiper>

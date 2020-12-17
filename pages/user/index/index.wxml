@@ -1,0 +1,64 @@
+<!-- pages/user/index/home.wxml -->
+<!-- 自定义导航 -->
+<custom-navbar class="observer" backgroundColor="transparent">
+    <view class="return" bind:tap="goBack" style="background-color: {{navbarIconBg}};">
+        <icon style="margin-right:3px" class="iconfont {{navbarIcon}}" />
+    </view>
+    <view class="topUserName" wx:if="{{navbarIcon === 'icon_guanbiCopy'}}">User_</view>
+</custom-navbar>
+<!-- 顶部的监视区域 -->
+<view class="top-mask" style="height:{{topMaskHeight}}px; background-color:{{topBackgroundColor}};"></view>
+<!-- 封面图片 -->
+<image class="front-cover" mode="widthFix" src="../../resource/images/bg.png" />
+<scroll-view class="front-page" scroll-y="{{opus[selected].data.length != 0}}" scroll-top="{{topNumber}}" refresher-enabled="{{true}}" refresher-threshold="30" refresher-default-style="black" bindscrolltolower="showMaskLayer" bindscrolltoupper="showMaskLayer">
+    <view class="front">
+        <view class="front-msg">
+            <image class="msg-avatar" src="../../resource/images/1213.jpg" />
+            <view>
+                <view class="msg-fan">
+                    <view>
+                        <text>1</text>
+                        <text>粉丝</text>
+                    </view>
+                    <view>
+                        <text>5</text>
+                        <text>关注</text>
+                    </view>
+                </view>
+                <view class="msg-btn" bind:tap="gotoUserInfo">
+                    <view>
+                        <icon class="iconfont icon_xie" />
+                        <text>编辑资料</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="front-info">
+            <view class="observer-sign">User_</view>
+            <view>用户ID:2141181005</view>
+            <view>
+                个人简介个个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介个人简介
+            </view>
+        </view>
+        <view class="front-navbar">
+            <view data-id="{{index}}" wx:for="{{opus}}" bind:tap="switchTab">
+                <view>{{item.number}}</view>
+                <view>{{item.name}}</view>
+                <view style="background-color:{{index === selected ? '#ff5000':'transparent'}};"></view>
+            </view>
+        </view>
+        <swiper class="front-swiper" current="{{selected}}" bind:change="switchTab" style="height:{{swiperHeight}}px;">
+            <swiper-item wx:for="{{opus}}" wx:for-item="object">
+                <view  class="item-repalce" wx:if="{{object.data.length === 0}}">
+                    <image mode="widthFix" src="../image/no.png" />
+                    <view wx:if="{{selected === 0 || selected === 1}}">没有作品，去发布</view>
+                    <view wx:if="{{selected === 2}}">没有收藏，去发现</view>
+                    <view wx:if="{{selected === 3}}">没有动态，去发表</view>
+                </view>
+                <myself-block my-class="myScrollStyle" list="{{object.data}}" wx:else></myself-block>
+                <view class="mask-layer" wx:if="{{showMaskLayer}}"></view>
+            </swiper-item>
+        </swiper>
+    </view>
+</scroll-view>
+<myself-btn my-class="cameraBtn" bind:jump="gotoCamera" wx:if="{{selected === 1 || selected === 0}}"></myself-btn>

@@ -1,0 +1,7 @@
+/**app.wxss**/
+
+@import "style/iconfont.wxss";
+.container {
+    display: flex;
+    justify-content: center;
+}

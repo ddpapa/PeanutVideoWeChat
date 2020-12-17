@@ -1,0 +1,5 @@
+<!--pages/user/info/editor/textarea/textarea.wxml-->
+<view class="page">
+    <textarea class="edit" value="{{text}}" />
+    <view>用户昵称不得包含非法字符，且一周之内只允许修改2次</view>
+</view>

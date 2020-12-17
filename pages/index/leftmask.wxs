@@ -1,0 +1,172 @@
+var newmark = startmark = 0;
+var status = 0;
+var data;
+var enableMoveWidth = 0;
+
+// 普通touch事件
+function touchstart(e, ins) {
+    console.log("触摸开始了");
+    movestatus = 0;
+    console.log(JSON.stringify(e));
+    data = {
+        windowWidth: (e.target.dataset.width || e.currentTarget.dataset.width),
+    }
+    newmark = startmark = (e.changedTouches[0] || e.touches[0]).pageX;
+    console.log(startmark);
+    // 移动多远距离会触发事件
+    enableMoveWidth = data.windowWidth * 0.75;
+    console.log("bottom页面的宽度:");
+    console.log(enableMoveWidth);
+}
+
+function touchmove(e, ins) {
+    console.log("手指在移动");
+    movestatus = 1;
+    var pageX = (e.changedTouches[0] || e.touches[0]).pageX;
+    newmark = pageX;
+    if (startmark < pageX) {
+        // 右滑
+        if (enableMoveWidth > Math.abs(newmark - startmark)) {
+            // 手指划过的距离小于可移动距离1234569784653213548816
+            console.log(status);
+            ins.selectComponent(".page-top").setStyle({
+                transform: 'translateX(' + Math.min(enableMoveWidth, (status == 1 ? enableMoveWidth : 0) + newmark - startmark) + 'px)',
+            });
+        }
+    }
+    if (startmark > pageX) {
+        // 左滑
+        ins.selectComponent('.page-top').setStyle({
+            transform: 'translateX(' + Math.max(0, ((status == 1 ? data.windowWidth * 0.75 : 0) + newmark - startmark)) + 'px)'
+        })
+    }
+
+}
+
+function touchend(e, ins) {
+    console.log("触摸结束了");
+    newmark = (e.changedTouches[0] || e.touches[0]).pageX;
+    console.log(newmark);
+    if (newmark > startmark) {
+        // 手指右移
+        if (data.windowWidth * 0.2 < Math.abs(newmark - startmark)) {
+            // 移动到展开状态
+            ins.selectComponent(".page-top").setStyle({
+                transform: 'translateX(' + enableMoveWidth + 'px)',
+            });
+            status = 1;
+            ins.selectComponent(".mask-layer").setStyle({
+                width: "100vw",
+                'background-color': 'rgba(0,0,0,0.3)',
+            })
+        } else {
+            // 取消移动，回到折叠状态
+            ins.selectComponent(".page-top").setStyle({
+                transform: 'translateX(0px)',
+            })
+            ins.selectComponent(".mask-layer").setStyle({
+                width: "4vw",
+                'background-color': 'transparent',
+            })
+            status = 0;
+        }
+    }
+
+    if (startmark > newmark) {
+        // 左移
+        ins.selectComponent('.page-top').setStyle({
+            transform: 'translateX(0px)'
+        })
+        ins.selectComponent(".mask-layer").setStyle({
+            width: "4vw",
+            'background-color': 'transparent',
+        })
+        status = 0 // 收起状态
+    }
+}
+
+// 手指滑动item0时
+function swiperTouchend(e, ins) {
+    console.log("触摸结束了");
+    console.log(JSON.stringify(e))
+    newmark = (e.changedTouches[0] || e.touches[0]).pageX;
+    console.log(movestatus);
+    if (newmark > startmark && movestatus === 1) {
+        // 移动到展开状态
+        ins.selectComponent(".page-top").setStyle({
+            "transition-delay": '0s',
+            "-webkit-transition-delay": '0s',
+            transform: 'translateX(' + enableMoveWidth + 'px)',
+        });
+        status = 1;
+        ins.selectComponent(".mask-layer").setStyle({
+            width: "100vw",
+            'background-color': 'rgba(0,0,0,0.3)',
+        })
+    }
+}
+
+/**
+ * 点击list按钮触发
+ */
+function tap(e, ins) {
+    // 移动多远距离会触发事件
+    enableMoveWidth = e.currentTarget.dataset.width * 0.75;
+    console.log("bottom页面的宽度:");
+    console.log(enableMoveWidth);
+    if (status == 0) {
+        ins.selectComponent(".page-top").setStyle({
+            transform: 'translateX(' + enableMoveWidth + 'px)',
+        });
+        status = 1;
+        ins.selectComponent(".mask-layer").setStyle({
+            width: "100vw",
+            'background-color': 'rgba(0,0,0,0.3)',
+        })
+    } else {
+        ins.selectComponent('.page-top').setStyle({
+            transform: 'translateX(0px)'
+        })
+        ins.selectComponent(".mask-layer").setStyle({
+            width: "4vw",
+            'background-color': 'transparent',
+        })
+        status = 0 // 收起状态
+    }
+}
+
+// 点击侧边遮罩层
+function tapMask(e, ins) {
+    ins.selectComponent('.page-top').setStyle({
+        transform: 'translateX(0px)',
+    })
+    ins.selectComponent(".mask-layer").setStyle({
+        width: "4vw",
+        'background-color': 'transparent',
+    })
+    status = 0 // 收起状态
+}
+
+// 跳转其他页面
+function tapOthers(e, ins) {
+    ins.selectComponent('.page-top').setStyle({
+        "transition-delay": '0s',
+        "-webkit-transition-delay": '0s',
+        transform: 'translateX(0px)',
+    })
+    ins.selectComponent(".mask-layer").setStyle({
+        width: "4vw",
+        'background-color': 'transparent',
+    })
+    status = 0 // 收起状态
+}
+
+
+module.exports = {
+    touchstart: touchstart,
+    touchmove: touchmove,
+    touchend: touchend,
+    tapMask: tapMask,
+    tap: tap,
+    swiperTouchend: swiperTouchend
+}

@@ -1,0 +1,26 @@
+<!--login.wxml-->
+<view class="container">
+  <view class="logo">
+    <image mode="heightFix" class="logo_img" src="../resource/images/logo.png"></image>
+    <text class="typeface">快速登录观看更多有趣的视频</text>
+  </view>
+  <view class="operation">
+    <button id="btn{{item.index}}"
+      wx:for="{{btnMessage}}" 
+      wx:key="key" bindtap="jumpToPages"  
+      class="oper_style" 
+      style="border-color:{{item.color}};background-color:{{item.color}};">
+      <iconfont size="40" name="{{item.iconfontType}}"/>{{item.items}}
+    </button>
+    <label id="otherways" class="others" bindtap="jumpToPages">其他登录方式</label>
+    <view class="agreement">
+      <label bindtap="changeState" wx:if="{{isShow}}">
+        <iconfont size="40" name="radio"/>
+      </label>
+      <label bindtap="changeState" wx:if="{{!isShow}}">
+        <iconfont size="40" name="radio-outlined"/>
+      </label>
+      我已阅读并同意《用户协议》和隐私政策
+    </view>
+  </view>
+</view>

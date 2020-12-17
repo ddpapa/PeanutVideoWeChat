@@ -1,0 +1,7 @@
+{
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "myself-block": "../../components/myself/myself-block/myself-block",
+        "myself-list": "../../components/myself/myself-list/myself-list"
+    }
+}

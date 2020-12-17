@@ -1,0 +1,10 @@
+{
+    "navigationStyle": "custom",
+    "usingComponents": {
+        "myself-block": "../../components/myself/myself-block/myself-block",
+        "custom-navbar": "../../components/custom/custom-navbar/custom-navbar",
+        "myself-list": "../../components/myself/myself-list/myself-list",
+        "custom-video": "../../components/custom/custom-video/custom-video",
+        "myself-btn":"../../components/myself/myself-btn/myself-btn"
+    }
+}

@@ -1,0 +1,46 @@
+/**login.wxss**/
+.container{
+  flex-direction: column;
+}
+.logo{
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.logo_img{
+  height: 100rpx;
+}
+.typeface{
+  margin-top: 50rpx;
+  font-family: "黑体";
+  font-size: 30rpx;
+}
+.operation{
+  margin-top: 60%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+/* 登录按钮 */
+.oper_style{
+  display: flex;
+  justify-content: center;
+  margin-top: 30rpx;
+  width: 500rpx !important;
+  text-align: center;
+  border-radius: 38rpx !important;
+  font-size: 30rpx;
+  color: white;
+  font-weight: lighter;
+}
+.others{
+  margin-top: 20rpx;
+  font-size: 30rpx;
+}
+.agreement{
+  margin-top: 20rpx;
+  font-size: 30rpx;
+  display: flex;
+  justify-content: center;
+}

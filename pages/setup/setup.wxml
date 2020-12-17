@@ -1,0 +1,14 @@
+<!-- pages/setup/setup.wxml -->
+<view class="list-header">账号</view>
+<view class="pages-center">
+    <myself-list dataMsg="{{accountSettings}}" rightWidth="90" rightHeight="100" fontSize="30" bindtapList="tapList"></myself-list>
+</view>
+<view class="list-header">通用</view>
+<view class="pages-center">
+    <myself-list dataMsg="{{ordinarySettings}}" rightWidth="90" rightHeight="100" fontSize="30" bindtapList="tapList"></myself-list>
+</view>
+<view class="list-header">关于</view>
+<view class="pages-center">
+    <myself-list dataMsg="{{aboutSettings}}" rightWidth="90" rightHeight="100" fontSize="30" bindtapList="tapList"></myself-list>
+</view>
+<view class="btn-loginout">退出登录</view>

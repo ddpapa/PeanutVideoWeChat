@@ -1,0 +1,25 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/user/index/index",
+        "pages/user/info/info",
+        "pages/setup/setup",
+        "pages/test/test",
+        "pages/camera/camera",
+        "pages/otherways/otherways",
+        "pages/loginpages/loginpages",
+        "pages/agreement/agreement",
+        "pages/user/info/editor/avatar/avatar",
+        "pages/user/info/editor/text/text",
+        "pages/user/info/editor/textarea/textarea"
+    ],
+    "usingComponents": {
+        "iconfont": "/iconfont/iconfont"
+    },
+    "useExtendedLib": {
+        "kbone": true,
+        "weui": true
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

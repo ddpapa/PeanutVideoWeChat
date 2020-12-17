@@ -1,0 +1,10 @@
+<!-- miblock/miblock.wxml -->
+<scroll-view class="openScroll" scroll-y="{{true}}">
+  <view class="cover-block my-class" wx:for="{{list}}">
+    <image class="cover-image" src="{{item.imagesURL}}" wx:if="{{item.imagesURL}}"></image>
+    <view class="cover-bottom">
+      <image class="avatar-image" mode="widthFix" src="{{item.avatarURL}}" wx:if="{{item.avatarURL}}"></image>
+      <view class="time" wx:if="{{item.createTIME}}">{{item.createTIME}}</view>
+    </view>
+  </view>
+</scroll-view>

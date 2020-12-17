@@ -1,0 +1,5 @@
+<!-- pages/user/info/editor/text/text.wxml -->
+<view class="page">
+    <input class="edit" value="{{text}}" />
+    <view>用户昵称不得包含非法字符，且一周之内只允许修改2次</view>
+</view>

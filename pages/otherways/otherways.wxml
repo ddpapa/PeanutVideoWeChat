@@ -1,0 +1,60 @@
+<!--login.wxml-->
+<view class="container">
+  <view class="topItem">
+    <text class="headText">手机号登录</text>
+    <text class="tipText">未注册的手机号登录成功后将自动注册</text>
+  </view>
+  <view class="operation">
+    <form bindsubmit="formSubmitAll">
+      <!-- 电话号码输入框，即 phone -->
+      <view class="line">
+        <view class="phone_left">
+          <picker style="margin-top:5rpx" bindchange="changeMessage" mode="selector" range-key="region"
+            range="{{array}}">
+            <label>{{message}}</label>
+          </picker>
+          <iconfont style="margin-top:8rpx;" size="35" name="tubiaozhizuo-" />
+          <input name="phone" id="phoneInput" class="phoneInput" type="number" maxlength="15" bindinput="showDelete"
+            bindfocus="hasFoucs" placeholder="请输入手机号" model:value="{{vaulePhoneNumber}}" />
+        </view>
+        <view class="phone_delete">
+          <label bindtap="resetPhoneInput" wx:if="{{isDeletePhone}}">
+            <iconfont size="35" name="shanchuguanbicha"></iconfont>
+          </label>
+        </view>
+      </view>
+      <!-- 验证码输入框，即 code -->
+      <view class="line">
+        <input name="code" id="codeInput" class="codeInput" maxlength="{{maxlen}}" type="number"
+          password="{{canUsePwd}}" bindinput="showDelete" bindfocus="hasFoucs" placeholder="请输入{{defaultValue}}"
+          model:value="{{valueCodeNumber}}" />
+        <view class="code_right">
+          <label class="code_delete" bindtap="resetCodeInput" wx:if="{{isDeleteCode}}">
+            <iconfont size="35" name="shanchuguanbicha"></iconfont>
+          </label>
+          <label class="code_btn" bindtap="formSubmitPhone" wx:if="{{getCode&!canUsePwd}}">
+            获取验证码
+          </label>
+          <label class="btn_sendTime" style="color:{{labelColor}};" wx:if="{{isAgainSend}}" bindtap="againSendCode">
+            重新发送
+            <text hidden="{{isTimeShow}}">({{countdown}}秒)</text>
+          </label>
+        </view>
+      </view>
+      <label class="pwd_btn" bindtap="clickPassWord">{{labelMsg}}登录</label>
+      <button id="btn1" class="login_btn" form-type="submit" bindtap="jumpToPages" disabled="{{endisable}}">登 录</button>
+    </form>
+  </view>
+  <view class="agreement">
+    <label bindtap="changeState" wx:if="{{isShow}}">
+      <iconfont size="40" name="radio" />
+    </label>
+    <label bindtap="changeState" wx:if="{{!isShow}}">
+      <iconfont size="40" name="radio-outlined" />
+    </label>
+    我已阅读并同意
+    <label id="btn2" class="bottomLink" bindtap="jumpToPages">《用户协议》</label>
+    和
+    <label id="btn3" class="bottomLink" bindtap="jumpToPages">隐私政策</label>
+  </view>
+</view>

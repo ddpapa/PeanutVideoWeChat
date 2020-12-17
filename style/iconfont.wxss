@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'iconfont';
+    /* project id 2190896 */
+    src: url('//at.alicdn.com/t/font_2190896_6khmmc5vnmv.eot');
+    src: url('//at.alicdn.com/t/font_2190896_6khmmc5vnmv.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_2190896_6khmmc5vnmv.woff2') format('woff2'), url('//at.alicdn.com/t/font_2190896_6khmmc5vnmv.woff') format('woff'), url('//at.alicdn.com/t/font_2190896_6khmmc5vnmv.ttf') format('truetype'), url('//at.alicdn.com/t/font_2190896_6khmmc5vnmv.svg#iconfont') format('svg');
+}
+
+
+/* 阿里巴巴iconfont开始 */
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon_xie::before {
+    content: '\e61c';
+    font-size: 40rpx;
+    color: black;
+}
+
+.icon_jinru::before {
+    content: '\e798';
+    font-size: 25rpx;
+    color: #bfbfbf;
+}
+
+
+/* miplayer组件使用 */
+
+.icon_soucang::before {
+    content: '\e603';
+    font-size: 55rpx;
+    text-shadow: 2rpx 2rpx 10rpx rgba(46, 46, 46, 0.8);
+    color: white;
+}
+
+.icon_pinglun::before {
+    content: '\e63a';
+    font-size: 55rpx;
+    text-shadow: 2rpx 2rpx 10rpx rgba(46, 46, 46, 0.8);
+    color: white;
+}
+
+.icon_fenxiang::before {
+    content: '\e72f';
+    font-size: 55rpx;
+    text-shadow: 2rpx 2rpx 10rpx rgba(46, 46, 46, 0.8);
+    color: white;
+}
+
+
+/* index.wxml使用 */
+
+.icon_shezhi::before {
+    content: '\e611';
+    font-size: 40rpx;
+    color: #707070;
+}
+
+
+/* camera.wxml使用 */
+
+.icon_guanbi::before {
+    content: '\e606';
+    font-size: 20px;
+    color: white;
+}
+
+.icon_guanbiCopy::before {
+    content: '\e606';
+    font-size: 20px;
+    color: black;
+}
+
+.icon_shanguangdeng_on::before {
+    content: '\e632';
+    font-size: 40rpx;
+    color: white;
+}
+
+.icon_shanguangdeng_off::before {
+    content: '\e60d';
+    font-size: 40rpx;
+    color: white;
+}
+
+.icon_fullscreen::before {
+    content: '\e720';
+    font-size: 45rpx;
+    color: white;
+}
+
+.icon_ninetosixteen::before {
+    content: '\e60e';
+    font-size: 45rpx;
+    color: white;
+}
+
+.icon_threetofour::before {
+    content: '\e607';
+    font-size: 45rpx;
+    color: white;
+}
+
+.icon_onetoone::before {
+    content: '\e610';
+    font-size: 45rpx;
+    color: white;
+}
+
+.icon_xiangji1::before {
+    content: '\e609';
+    font-size: 50rpx;
+}
+
+.icon_xiangji::before {
+    content: '\e613';
+    font-size: 50rpx;
+    text-shadow: 2rpx 2rpx 10rpx rgba(0, 0, 0, 0.8);
+}
+
+.icon_shuaxin::before {
+    content: '\e602';
+    font-size: 30rpx;
+}
+
+.icon_jishi::before {
+    content: '\e608';
+    font-size: 60rpx;
+    text-shadow: 2rpx 2rpx 10rpx rgba(0, 0, 0, 0.8);
+}
+
+.icon_daojishi::before {
+    content: '\e644';
+    font-size: 50rpx;
+    text-shadow: 2rpx 2rpx 10rpx rgba(0, 0, 0, 0.8);
+}
+
+
+/* 阿里巴巴iconfont结束 */

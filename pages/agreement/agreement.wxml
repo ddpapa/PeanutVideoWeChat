@@ -1,0 +1,4 @@
+<!--pages/agreement.wxml-->
+<view>
+  <text class="topic">《关于逗趣小视频》</text>
+</view>

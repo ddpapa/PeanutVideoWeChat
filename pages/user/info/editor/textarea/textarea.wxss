@@ -1,0 +1,30 @@
+/* pages/user/info/editor/textarea/textarea.wxss */
+
+
+/* pages/user/info/editor/text/text.wxss */
+
+page {
+    background-color: #f8f8f8;
+}
+
+.page {
+    width: 90vw;
+    margin: 0 5vw;
+    margin-top: 6vw;
+    background-color: #f8f8f8;
+}
+
+.page>view {
+    color: #9c9c9c;
+    font-size: 25rpx;
+}
+
+.edit {
+    width: 98%;
+    height: 50vh;
+    font-size: 35rpx;
+    padding: 0 1%;
+    border: 2rpx solid #aeaeae;
+    border-radius: 10rpx;
+    background-color: white;
+}

@@ -1,0 +1,16 @@
+/* milist/milist.wxss */
+
+@import "../../../style/iconfont.wxss";
+.list-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.item-start {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}

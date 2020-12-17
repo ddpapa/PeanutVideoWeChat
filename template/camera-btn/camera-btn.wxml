@@ -1,0 +1,5 @@
+<template name="cameraBtn">
+    <view class="btn">
+        发布作品
+    </view>
+</template>

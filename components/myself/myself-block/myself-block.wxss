@@ -1,0 +1,45 @@
+/* miblock/miblock.wxss */
+
+.openScroll {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    white-space: normal;
+}
+
+.cover-block {
+    float: left;
+    position: relative;
+    background-color: white;
+    overflow: hidden;
+}
+
+.cover-image {
+    width: 100%;
+    height: 100%;
+}
+
+.cover-bottom {
+    position: absolute;
+    left: 2%;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 96%;
+    height: 65rpx;
+}
+
+.avatar-image {
+    width: 50rpx;
+    height: 50rpx;
+    border: 1px solid white;
+    border-radius: 50%;
+    align-self: flex-start;
+}
+
+.time {
+    color: #c6c6c6;
+    font-size: 20rpx;
+    align-self: flex-end;
+}

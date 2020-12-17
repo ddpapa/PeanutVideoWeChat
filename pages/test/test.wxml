@@ -1,0 +1,2 @@
+<!--pages/test/test.wxml-->
+<myself-list dataMsg="{{leftList}}" rightWidth="87" rightHeight="100" fontSize="30" bindtapList="tapList"></myself-list>

@@ -1,0 +1,5 @@
+<!-- components/myself/myself-btn/myself-btn.wxml -->
+<view class="btn my-class" bindtap="gotoCamera">
+    <icon class="iconfont icon_xiangji1" />
+    发布作品
+</view>

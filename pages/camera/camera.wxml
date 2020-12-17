@@ -1,0 +1,39 @@
+<!-- pages/camera/camera.wxml -->
+<custom-navbar backgroundColor="transparent">
+  <view class="topBar">
+    <view bindtap="goBack">
+      <icon class="iconfont icon_guanbi" />
+    </view>
+    <view bindtap="openLight">
+      <icon class="iconfont {{flash == 'on' ? 'icon_shanguangdeng_on':'icon_shanguangdeng_off'}}" />
+    </view>
+    <view bindtap="checkScreenProportion">
+      <icon class="iconfont {{screensize}}" />
+    </view>
+  </view>
+</custom-navbar>
+<view class="mask-layer" style="height:{{systemData.navbarHeight+systemData.statusBarHeight}}px;"></view>
+<view class="size-view" wx:if="{{canChangeProportion}}" style="top:{{systemData.navbarHeight+systemData.statusBarHeight}}px;">
+  <view data-id="{{index}}" wx:key="index" wx:for="{{sizeArray}}" bindtap="changeScreenProportion" style="color:{{item.iconfont == screensize ? '#ff5f15':'#ffffff'}};">
+    <text>{{item.text}}</text>
+  </view>
+</view>
+<!-- 竖排控制区域 -->
+<view class="top-rightBar" style="top:{{systemData.navbarHeight+systemData.statusBarHeight}}px;">
+  <view class="has-icon top-rightBar-view" bindtap="checkDirection">
+    <view>
+      <!-- <text class="iconfont icon_shuaxin" animation="{{rotateAnimation}}"></text> -->
+      <iconfont name="shuaxin2" size="25" animation="{{rotateAnimation}}" />
+      <text style="position:absolute; top:19rpx;" class="iconfont icon_xiangji"></text>
+    </view>
+  </view>
+  <view class="has-text top-rightBar-view" wx:if="{{true}}">
+    <text class="iconfont icon_jishi"></text>
+    <view>定时{{timingStatus}}</view>
+  </view>
+  <view class="has-text top-rightBar-view" wx:if="{{true}}">
+    <text class="iconfont icon_daojishi"></text>
+    <view>倒计时</view>
+  </view>
+</view>
+<camera flash="{{flash}}" resolution="high" device-position="{{direction}}" style="height:{{screenHeight}}px; align-self:{{alignSelf}}"></camera>
